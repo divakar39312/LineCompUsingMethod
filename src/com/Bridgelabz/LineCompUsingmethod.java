@@ -1,11 +1,13 @@
 package com.Bridgelabz;
 
 public class LineCompUsingmethod {
-	/*
-	 * equality of two line
-	 */
-	public static void EqualityofTwoline()
+	public static void LineGreater()
 	{
+		/*
+		 * equality of two line
+		 * length greater line
+		 */
+		
 		int x1=8;
 		int x2=7;
 		int y1=7;
@@ -22,15 +24,15 @@ public class LineCompUsingmethod {
 		Integer a1=new Integer((int)distof1);
 		Integer a2=new Integer((int)distof2);
 		System.out.println("line are equal"+a1.equals(a2));
+		if(a1.compareTo(a2)>0) {
+			System.out.println("length of first line is greater");
+		}else {
+			System.out.println("length of second line greater");
+		}
+		
 	}
 public static void main(String[] args) {
-		
-
-	EqualityofTwoline();
-		
-		
-		
-		
-		
+	LineGreater();
+	
 }
 }
