@@ -1,38 +1,53 @@
 package com.Bridgelabz;
 
+import java.util.Scanner;
+
 public class LineCompUsingmethod {
-	public static void LineGreater()
-	{
-		/*
-		 * equality of two line
-		 * length greater line
-		 */
+	public static double length1,length2,length;
+	static int x1,value,count;
+	static int y1;
+	static int x2;
+	static int y2;
+	//To give input of line Coordinates
+	public  void coordinates() {
+		Scanner sc = new Scanner(System.in);
+		   count++;
+		System.out.println("Please Enter Coordinates of Line "+count+"\nX1,Y1 X2,Y2");
+		int x1 = sc.nextInt();
+		int y1 = sc.nextInt();
+		int x2 = sc.nextInt();
+		int y2 = sc.nextInt();
+		System.out.println("Points Entered for Line "+count);
+		System.out.println("points x1= " +x1);
+		System.out.println(" points y1= " +y1);
+		System.out.println("points x2= " +x2);
+		System.out.println("points y2= " +y2);
+		System.out.println(" ");
 		
-		int x1=8;
-		int x2=7;
-		int y1=7;
-		int y2=7;
-		int x3=6;
-		int x4=6;
-		int y3=7;
-		int y4=6;
-		
-		double distof1 =(Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1,2)));
-		double distof2 =(Math.sqrt(Math.pow(x4-x3, 2)+Math.pow(y4-y3,2)));
-		System.out.println("length of first line"+distof1);
-		System.out.println("length of first line"+distof2);
-		Integer a1=new Integer((int)distof1);
-		Integer a2=new Integer((int)distof2);
-		System.out.println("line are equal"+a1.equals(a2));
-		if(a1.compareTo(a2)>0) {
-			System.out.println("length of first line is greater");
-		}else {
-			System.out.println("length of second line greater");
-		}
-		
+		length =(double) Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
 	}
-public static void main(String[] args) {
-	LineGreater();
+	
+	//To Calculate Line Length
+	public  void lineLength() {
+		coordinates();
+		length1 =length;
+		coordinates();
+		length2 =length;
+		System.out.println(" ");
+		System.out.println("The Length of Line1 is :"+length1);
+		System.out.println("The Length of Line2 is :"+length2);	
+	}
+	
+	//To Compare both lines Length
+	public  void Comparing() {
+		
+		value = Double.compare(length1,length2);
+		if(value == 0)
+			System.out.println("The Lines are Equal");
+		else if(value > 1)
+			System.out.println("Line 2 is Greater than Line 1");
+		else
+			System.out.println("Line 1 is Greater than Line 2");
 	
 }
 }
